@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<button class="btn btn-success mb-3" @onmouseenter="HandleChangeLoadingButtonClick" @onclick="HandleChangeLoadingButtonClick">Change Loading</button>
+
+<h2 class="@(isCompany ? "text-info" : "text-danger")">Vergi Kimlik No</h2>
+
+@* @if (isCompany)
+{
+    <h1 class="text-info">Vergi Kimlik No:</h1>
+}
+else
+{
+    <h1 class="text-danger">Tc Kimlik No:</h1>
+} *@
+
+
+@code {
+    private string userName = "Huseyin K.";
+    private bool isLoading = false;
+    private bool isCompany = false;
+
+    private void HandleChangeLoadingButtonClick()
+    {
+        isLoading = !isLoading;
+
+        isCompany = !isCompany;
+    }
+}
