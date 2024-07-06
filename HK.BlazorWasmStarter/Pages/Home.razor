@@ -2,29 +2,12 @@
 
 <PageTitle>Home</PageTitle>
 
-<button class="btn btn-success mb-3" @onmouseenter="HandleChangeLoadingButtonClick" @onclick="HandleChangeLoadingButtonClick">Change Loading</button>
+<p class="mb-1">@_password</p>
 
-<h2 class="@(isCompany ? "text-info" : "text-danger")">Vergi Kimlik No</h2>
+<input type="text" class="form-control" @bind="_password" @bind:event="oninput" />
 
-@* @if (isCompany)
-{
-    <h1 class="text-info">Vergi Kimlik No:</h1>
-}
-else
-{
-    <h1 class="text-danger">Tc Kimlik No:</h1>
-} *@
-
+<MyButton/>
 
 @code {
-    private string userName = "Huseyin K.";
-    private bool isLoading = false;
-    private bool isCompany = false;
-
-    private void HandleChangeLoadingButtonClick()
-    {
-        isLoading = !isLoading;
-
-        isCompany = !isCompany;
-    }
+    private string _password = string.Empty;
 }

@@ -1,0 +1,30 @@
+﻿@page "/isloadingandcompanyexamples"
+
+<PageTitle>Home</PageTitle>
+
+<button class="btn btn-success mb-3" @onmouseenter="HandleChangeLoadingButtonClick" @onclick="HandleChangeLoadingButtonClick">Change Loading</button>
+
+<h2 class="@(_isCompany ? "text-info" : "text-danger")">Vergi Kimlik No</h2>
+
+@* @if (isCompany)
+{
+    <h1 class="text-info">Vergi Kimlik No:</h1>
+}
+else
+{
+    <h1 class="text-danger">Tc Kimlik No:</h1>
+} *@
+
+
+@code {
+    // private string _userName = "Huseyin K.";
+    private bool _isLoading = false;
+    private bool _isCompany = false;
+
+    private void HandleChangeLoadingButtonClick()
+    {
+        _isLoading = !_isLoading;
+
+        _isCompany = !_isCompany;
+    }
+}
